@@ -14,11 +14,44 @@ namespace Presentacion
     {
         private int childFormNumber = 0;
 
+        public Personas.frm_Persona_Crear frm_Persona_Crear;
+
         public Principal()
         {
             InitializeComponent();
         }
 
+        #region Eventos
+        private void crearToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            if (frm_Persona_Crear != null)
+            {
+                if (frm_Persona_Crear.IsDisposed)
+                {
+                    frm_Persona_Crear = null;
+                }
+                else
+                {
+                    frm_Persona_Crear.BringToFront();
+                }
+            }
+
+            if (frm_Persona_Crear == null)
+            {
+                frm_Persona_Crear = new Personas.frm_Persona_Crear();
+                frm_Persona_Crear.MdiParent = this;
+                frm_Persona_Crear.Show();
+            }
+        }
+
+        #endregion
+
+
+
+
+
+        #region Auto Creados por MDI 
         private void ShowNewForm(object sender, EventArgs e)
         {
             Form childForm = new Form();
@@ -103,5 +136,7 @@ namespace Presentacion
                 childForm.Close();
             }
         }
+        #endregion
+
     }
 }
