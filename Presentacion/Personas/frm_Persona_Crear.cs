@@ -12,6 +12,9 @@ namespace Presentacion.Personas
 {
     public partial class frm_Persona_Crear : Form
     {
+        /// <summary>
+        /// Funciones de inicializacion de la clase.
+        /// </summary>
         public frm_Persona_Crear()
         {
             InitializeComponent();
@@ -19,6 +22,15 @@ namespace Presentacion.Personas
             lst_TipoSocio.SelectedItem = lst_TipoSocio.Items[0];
         }
 
+
+
+
+
+        /// <summary>
+        /// Crea una Entidad.Persona y la envia para su procesamiento y persistencia.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_Enviar_Click(object sender, EventArgs e)
         {
             var persona = new Entidades.Persona();
@@ -42,6 +54,15 @@ namespace Presentacion.Personas
             }
         }
 
+
+
+
+
+        /// <summary>
+        /// Limpia todos los campos del formulario.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_Limpiar_Click(object sender, EventArgs e)
         {
             txt_Apellido.Clear();

@@ -22,6 +22,10 @@ namespace Entidades
 
         public string Domicilio { get; set; }
 
+        public string Localidad { get; set; }
+
+        public int Zona { get; set; }
+
         public int CodigoPostal { get; set; }
 
         public string Telefono { get; set; }

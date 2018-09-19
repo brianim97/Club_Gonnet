@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Configuration;
 using System.IO;
+using MySql.Data.MySqlClient;
 
 namespace Persistencia
 {
@@ -17,6 +18,14 @@ namespace Persistencia
             string[] f = File.ReadAllLines("..\\..\\..\\Persistencia\\bin\\Debug\\ConnectionStringFile.txt");
             
             ConnectionString = f[0];
+        }
+
+        public static MySqlConnection ConstructConnectorInstance()
+        {
+            if(ConnectionString == null)
+                LoadConnectionString();
+
+            return new MySqlConnection(ConnectionString);
         }
     }
 }
