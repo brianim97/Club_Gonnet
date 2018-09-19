@@ -1,0 +1,1 @@
+﻿Server=127.0.0.1;Database=club_gonnet;Uid=Pathus22;Pwd=Arless22;

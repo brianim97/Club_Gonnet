@@ -138,5 +138,9 @@ namespace Presentacion
         }
         #endregion
 
+        private void Principal_Load(object sender, EventArgs e)
+        {
+            new Negocio.Inicializacion();
+        }
     }
 }

@@ -31,5 +31,25 @@ namespace Entidades
         public TipoSocio TipoSocio { get; set; }
 
         public bool EsActivo { get; set; }
+
+        public TipoSocio ConvertirATipoSocio(int index)
+        {
+            switch(index)
+            {
+                case 0:
+                    return TipoSocio.NO_SOCIO;
+                case 1:
+                    return TipoSocio.MENORES;
+                case 2:
+                    return TipoSocio.MAYORES;
+                case 3:
+                    return TipoSocio.SOCIO_LECTOR;
+                case 4:
+                    return TipoSocio.VITALICIOS;
+            }
+
+            return TipoSocio.NO_SOCIO;
+        }
+
     }
 }
