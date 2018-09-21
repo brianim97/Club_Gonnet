@@ -1,4 +1,5 @@
 ﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,7 +11,7 @@ namespace Entidades
     {
         public int Id { get; set; }
 
-        public string Dni { get; set; }
+        public long Dni { get; set; }
 
         public string Nombre { get; set; }
 
@@ -36,23 +37,30 @@ namespace Entidades
 
         public bool EsActivo { get; set; }
 
-        public TipoSocio ConvertirATipoSocio(int index)
-        {
-            switch(index)
-            {
-                case 0:
-                    return TipoSocio.NO_SOCIO;
-                case 1:
-                    return TipoSocio.MENORES;
-                case 2:
-                    return TipoSocio.MAYORES;
-                case 3:
-                    return TipoSocio.SOCIO_LECTOR;
-                case 4:
-                    return TipoSocio.VITALICIOS;
-            }
+        public byte[] Imagen_bytes { get; set; }
 
-            return TipoSocio.NO_SOCIO;
+        public Persona()
+        {
+
+        }
+
+        public Persona(long dni, string nombre, string apellido, DateTime fechaNacimiento, DateTime fechaIngreso, string domicilio, string localidad, int codigoPostal, int zona, string telefono, string mail, TipoSocio tipoSocio, byte[] imageByte ,bool esActivo = false)
+        {
+            this.Dni = dni;
+            this.Nombre = nombre;
+            this.Apellido = apellido;
+            this.FechaNacimiento = FechaNacimiento;
+            this.FechaIngreso = FechaIngreso;
+            this.Domicilio = domicilio;
+            this.CodigoPostal = codigoPostal;
+            this.Zona = zona;
+            this.Localidad = localidad;
+            this.Telefono = telefono;
+            this.Mail = mail;
+            this.TipoSocio = TipoSocio;
+            this.Imagen_bytes = imageByte;
+            this.EsActivo = esActivo;
+                
         }
 
     }

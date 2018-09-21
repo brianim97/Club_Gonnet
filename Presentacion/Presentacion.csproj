@@ -61,10 +61,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Personas\frm_Persona_Crear.cs">
+    <Compile Include="frm_Personas\frm_Persona_Crear.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Personas\frm_Persona_Crear.Designer.cs">
+    <Compile Include="frm_Personas\frm_Persona_Crear.Designer.cs">
       <DependentUpon>frm_Persona_Crear.cs</DependentUpon>
     </Compile>
     <Compile Include="Principal.cs">
@@ -75,7 +75,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Personas\frm_Persona_Crear.resx">
+    <EmbeddedResource Include="frm_Personas\frm_Persona_Crear.resx">
       <DependentUpon>frm_Persona_Crear.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Principal.resx">
@@ -89,6 +89,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -128,6 +129,8 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="Imagenes\Iconos\AgregarUsuario_Azul.ico" />
+    <Content Include="Imagenes\Imagenes\NoUser.jpg" />
+    <None Include="Resources\gonnet logo activeCaption.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

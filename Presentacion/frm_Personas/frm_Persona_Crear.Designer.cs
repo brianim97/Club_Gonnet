@@ -48,13 +48,19 @@
             this.txt_CodPostal = new System.Windows.Forms.TextBox();
             this.lbl_Telefono = new System.Windows.Forms.Label();
             this.lbl_Mail = new System.Windows.Forms.Label();
+            this.txt_Mail = new System.Windows.Forms.TextBox();
             this.btn_Limpiar = new System.Windows.Forms.Button();
             this.lbl_TipoSocio = new System.Windows.Forms.Label();
             this.lst_TipoSocio = new System.Windows.Forms.ListBox();
             this.lbl_Log = new System.Windows.Forms.Label();
             this.mtxt_Telefono = new System.Windows.Forms.MaskedTextBox();
-            this.txt_Mail = new System.Windows.Forms.TextBox();
+            this.txt_Zona = new System.Windows.Forms.TextBox();
+            this.lbl_Zona = new System.Windows.Forms.Label();
+            this.pb_logo = new System.Windows.Forms.PictureBox();
+            this.pb_Imagen = new System.Windows.Forms.PictureBox();
             this.tlp_Main.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_logo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_Imagen)).BeginInit();
             this.SuspendLayout();
             // 
             // tlp_Main
@@ -64,11 +70,11 @@
             this.tlp_Main.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.tlp_Main.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tlp_Main.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tlp_Main.Controls.Add(this.pb_logo, 0, 0);
             this.tlp_Main.Controls.Add(this.btn_Enviar, 2, 8);
             this.tlp_Main.Controls.Add(this.txt_Dni, 1, 2);
             this.tlp_Main.Controls.Add(this.txt_Apellido, 3, 1);
             this.tlp_Main.Controls.Add(this.lbl_Apellido, 2, 1);
-            this.tlp_Main.Controls.Add(this.lbl_Titulo, 0, 0);
             this.tlp_Main.Controls.Add(this.txt_Nombre, 1, 1);
             this.tlp_Main.Controls.Add(this.lbl_Nombre, 0, 1);
             this.tlp_Main.Controls.Add(this.lbl_Dni, 0, 2);
@@ -88,6 +94,10 @@
             this.tlp_Main.Controls.Add(this.lst_TipoSocio, 1, 5);
             this.tlp_Main.Controls.Add(this.lbl_Log, 0, 7);
             this.tlp_Main.Controls.Add(this.mtxt_Telefono, 1, 3);
+            this.tlp_Main.Controls.Add(this.pb_Imagen, 3, 0);
+            this.tlp_Main.Controls.Add(this.txt_Zona, 1, 6);
+            this.tlp_Main.Controls.Add(this.lbl_Zona, 0, 6);
+            this.tlp_Main.Controls.Add(this.lbl_Titulo, 1, 0);
             this.tlp_Main.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlp_Main.Font = new System.Drawing.Font("Segoe MDL2 Assets", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tlp_Main.ForeColor = System.Drawing.SystemColors.HighlightText;
@@ -131,10 +141,12 @@
             // txt_Apellido
             // 
             this.txt_Apellido.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_Apellido.BackColor = System.Drawing.SystemColors.Window;
             this.txt_Apellido.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txt_Apellido.Location = new System.Drawing.Point(550, 124);
+            this.txt_Apellido.Location = new System.Drawing.Point(547, 124);
+            this.txt_Apellido.Margin = new System.Windows.Forms.Padding(0);
             this.txt_Apellido.Name = "txt_Apellido";
-            this.txt_Apellido.Size = new System.Drawing.Size(231, 31);
+            this.txt_Apellido.Size = new System.Drawing.Size(237, 31);
             this.txt_Apellido.TabIndex = 2;
             // 
             // lbl_Apellido
@@ -144,9 +156,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_Apellido.AutoEllipsis = true;
             this.lbl_Apellido.AutoSize = true;
-            this.lbl_Apellido.Location = new System.Drawing.Point(394, 112);
+            this.lbl_Apellido.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.lbl_Apellido.Location = new System.Drawing.Point(391, 112);
+            this.lbl_Apellido.Margin = new System.Windows.Forms.Padding(0);
             this.lbl_Apellido.Name = "lbl_Apellido";
-            this.lbl_Apellido.Size = new System.Drawing.Size(150, 56);
+            this.lbl_Apellido.Size = new System.Drawing.Size(156, 56);
             this.lbl_Apellido.TabIndex = 0;
             this.lbl_Apellido.Text = "Apellido";
             this.lbl_Apellido.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -157,23 +171,26 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_Titulo.BackColor = System.Drawing.SystemColors.Highlight;
-            this.tlp_Main.SetColumnSpan(this.lbl_Titulo, 4);
+            this.tlp_Main.SetColumnSpan(this.lbl_Titulo, 2);
             this.lbl_Titulo.Font = new System.Drawing.Font("Palatino Linotype", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Titulo.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.lbl_Titulo.Location = new System.Drawing.Point(3, 0);
+            this.lbl_Titulo.Location = new System.Drawing.Point(156, 0);
+            this.lbl_Titulo.Margin = new System.Windows.Forms.Padding(0);
             this.lbl_Titulo.Name = "lbl_Titulo";
-            this.lbl_Titulo.Size = new System.Drawing.Size(778, 112);
+            this.lbl_Titulo.Size = new System.Drawing.Size(391, 112);
             this.lbl_Titulo.TabIndex = 0;
-            this.lbl_Titulo.Text = "NUEVA PERSONA";
+            this.lbl_Titulo.Text = "NUEVO SOCIO";
             this.lbl_Titulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txt_Nombre
             // 
             this.txt_Nombre.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_Nombre.BackColor = System.Drawing.SystemColors.Window;
             this.txt_Nombre.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txt_Nombre.Location = new System.Drawing.Point(159, 124);
+            this.txt_Nombre.Location = new System.Drawing.Point(156, 124);
+            this.txt_Nombre.Margin = new System.Windows.Forms.Padding(0);
             this.txt_Nombre.Name = "txt_Nombre";
-            this.txt_Nombre.Size = new System.Drawing.Size(229, 31);
+            this.txt_Nombre.Size = new System.Drawing.Size(235, 31);
             this.txt_Nombre.TabIndex = 1;
             // 
             // lbl_Nombre
@@ -183,9 +200,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_Nombre.AutoEllipsis = true;
             this.lbl_Nombre.AutoSize = true;
-            this.lbl_Nombre.Location = new System.Drawing.Point(3, 112);
+            this.lbl_Nombre.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.lbl_Nombre.Location = new System.Drawing.Point(0, 112);
+            this.lbl_Nombre.Margin = new System.Windows.Forms.Padding(0);
             this.lbl_Nombre.Name = "lbl_Nombre";
-            this.lbl_Nombre.Size = new System.Drawing.Size(150, 56);
+            this.lbl_Nombre.Size = new System.Drawing.Size(156, 56);
             this.lbl_Nombre.TabIndex = 0;
             this.lbl_Nombre.Text = "Nombre";
             this.lbl_Nombre.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -247,7 +266,7 @@
             this.dtp_FechaNacimiento.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.dtp_FechaNacimiento.CalendarFont = new System.Drawing.Font("Segoe MDL2 Assets", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtp_FechaNacimiento.CustomFormat = "dd/MM/yyyy";
-            this.dtp_FechaNacimiento.Font = new System.Drawing.Font("Segoe MDL2 Assets", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtp_FechaNacimiento.Font = new System.Drawing.Font("Segoe MDL2 Assets", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtp_FechaNacimiento.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtp_FechaNacimiento.Location = new System.Drawing.Point(550, 183);
             this.dtp_FechaNacimiento.Name = "dtp_FechaNacimiento";
@@ -286,6 +305,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoEllipsis = true;
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.label1.Font = new System.Drawing.Font("Segoe MDL2 Assets", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(394, 336);
             this.label1.Name = "label1";
@@ -310,7 +330,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_Telefono.AutoEllipsis = true;
             this.lbl_Telefono.AutoSize = true;
+            this.lbl_Telefono.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.lbl_Telefono.Font = new System.Drawing.Font("Segoe MDL2 Assets", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Telefono.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.lbl_Telefono.Location = new System.Drawing.Point(3, 224);
             this.lbl_Telefono.Name = "lbl_Telefono";
             this.lbl_Telefono.Size = new System.Drawing.Size(150, 56);
@@ -325,13 +347,23 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_Mail.AutoEllipsis = true;
             this.lbl_Mail.AutoSize = true;
+            this.lbl_Mail.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.lbl_Mail.Font = new System.Drawing.Font("Segoe MDL2 Assets", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Mail.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.lbl_Mail.Location = new System.Drawing.Point(394, 224);
             this.lbl_Mail.Name = "lbl_Mail";
             this.lbl_Mail.Size = new System.Drawing.Size(150, 56);
             this.lbl_Mail.TabIndex = 15;
             this.lbl_Mail.Text = "Mail";
             this.lbl_Mail.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // txt_Mail
+            // 
+            this.txt_Mail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_Mail.Location = new System.Drawing.Point(550, 236);
+            this.txt_Mail.Name = "txt_Mail";
+            this.txt_Mail.Size = new System.Drawing.Size(231, 31);
+            this.txt_Mail.TabIndex = 6;
             // 
             // btn_Limpiar
             // 
@@ -353,6 +385,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_TipoSocio.AutoEllipsis = true;
             this.lbl_TipoSocio.AutoSize = true;
+            this.lbl_TipoSocio.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.lbl_TipoSocio.Font = new System.Drawing.Font("Segoe MDL2 Assets", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_TipoSocio.Location = new System.Drawing.Point(3, 336);
             this.lbl_TipoSocio.Name = "lbl_TipoSocio";
@@ -364,7 +397,7 @@
             // lst_TipoSocio
             // 
             this.lst_TipoSocio.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lst_TipoSocio.Font = new System.Drawing.Font("Segoe MDL2 Assets", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lst_TipoSocio.Font = new System.Drawing.Font("Segoe MDL2 Assets", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lst_TipoSocio.FormattingEnabled = true;
             this.lst_TipoSocio.ItemHeight = 16;
             this.lst_TipoSocio.Items.AddRange(new object[] {
@@ -382,6 +415,7 @@
             // 
             this.lbl_Log.AutoEllipsis = true;
             this.lbl_Log.AutoSize = true;
+            this.lbl_Log.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.tlp_Main.SetColumnSpan(this.lbl_Log, 4);
             this.lbl_Log.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lbl_Log.ForeColor = System.Drawing.SystemColors.Highlight;
@@ -397,20 +431,63 @@
             this.mtxt_Telefono.AsciiOnly = true;
             this.mtxt_Telefono.CausesValidation = false;
             this.mtxt_Telefono.Location = new System.Drawing.Point(159, 236);
-            this.mtxt_Telefono.Mask = "999999999999999999";
             this.mtxt_Telefono.Name = "mtxt_Telefono";
             this.mtxt_Telefono.Size = new System.Drawing.Size(229, 31);
             this.mtxt_Telefono.TabIndex = 5;
             this.mtxt_Telefono.ValidatingType = typeof(int);
             // 
-            // txt_Mail
+            // txt_Zona
             // 
-            this.txt_Mail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_Mail.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txt_Mail.Location = new System.Drawing.Point(550, 236);
-            this.txt_Mail.Name = "txt_Mail";
-            this.txt_Mail.Size = new System.Drawing.Size(231, 31);
-            this.txt_Mail.TabIndex = 6;
+            this.txt_Zona.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_Zona.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txt_Zona.Location = new System.Drawing.Point(159, 404);
+            this.txt_Zona.Name = "txt_Zona";
+            this.txt_Zona.Size = new System.Drawing.Size(229, 31);
+            this.txt_Zona.TabIndex = 23;
+            // 
+            // lbl_Zona
+            // 
+            this.lbl_Zona.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_Zona.AutoEllipsis = true;
+            this.lbl_Zona.AutoSize = true;
+            this.lbl_Zona.Font = new System.Drawing.Font("Segoe MDL2 Assets", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Zona.Location = new System.Drawing.Point(3, 392);
+            this.lbl_Zona.Name = "lbl_Zona";
+            this.lbl_Zona.Size = new System.Drawing.Size(150, 56);
+            this.lbl_Zona.TabIndex = 22;
+            this.lbl_Zona.Text = "Zona";
+            this.lbl_Zona.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // pb_logo
+            // 
+            this.pb_logo.BackColor = System.Drawing.SystemColors.Highlight;
+            this.pb_logo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pb_logo.Image = global::Presentacion.Properties.Resources.gonnet_logo_activeCaption;
+            this.pb_logo.InitialImage = ((System.Drawing.Image)(resources.GetObject("pb_logo.InitialImage")));
+            this.pb_logo.Location = new System.Drawing.Point(0, 0);
+            this.pb_logo.Margin = new System.Windows.Forms.Padding(0);
+            this.pb_logo.Name = "pb_logo";
+            this.pb_logo.Size = new System.Drawing.Size(156, 112);
+            this.pb_logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pb_logo.TabIndex = 24;
+            this.pb_logo.TabStop = false;
+            // 
+            // pb_Imagen
+            // 
+            this.pb_Imagen.BackColor = System.Drawing.SystemColors.Highlight;
+            this.pb_Imagen.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pb_Imagen.Image = global::Presentacion.Properties.Resources.NoUser;
+            this.pb_Imagen.InitialImage = ((System.Drawing.Image)(resources.GetObject("pb_Imagen.InitialImage")));
+            this.pb_Imagen.Location = new System.Drawing.Point(547, 0);
+            this.pb_Imagen.Margin = new System.Windows.Forms.Padding(0);
+            this.pb_Imagen.Name = "pb_Imagen";
+            this.pb_Imagen.Size = new System.Drawing.Size(237, 112);
+            this.pb_Imagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pb_Imagen.TabIndex = 21;
+            this.pb_Imagen.TabStop = false;
+            this.pb_Imagen.Click += new System.EventHandler(this.pb_Imagen_Click);
             // 
             // frm_Persona_Crear
             // 
@@ -425,6 +502,8 @@
             this.Text = "Nueva Persona";
             this.tlp_Main.ResumeLayout(false);
             this.tlp_Main.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_logo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_Imagen)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -456,5 +535,9 @@
         private System.Windows.Forms.Label lbl_Log;
         private System.Windows.Forms.TextBox txt_Mail;
         private System.Windows.Forms.MaskedTextBox mtxt_Telefono;
+        private System.Windows.Forms.PictureBox pb_Imagen;
+        private System.Windows.Forms.TextBox txt_Zona;
+        private System.Windows.Forms.Label lbl_Zona;
+        private System.Windows.Forms.PictureBox pb_logo;
     }
 }

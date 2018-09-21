@@ -9,8 +9,8 @@ namespace Entidades
     public enum TipoSocio
     {
         NO_SOCIO,
-        MAYORES,
         MENORES,
+        MAYORES,
         VITALICIOS,
         SOCIO_LECTOR
     }
