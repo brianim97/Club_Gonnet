@@ -39,6 +39,8 @@ namespace Entidades
 
         public byte[] Imagen_bytes { get; set; }
 
+
+
         public Persona()
         {
 
@@ -59,8 +61,13 @@ namespace Entidades
             this.Mail = mail;
             this.TipoSocio = TipoSocio;
             this.Imagen_bytes = imageByte;
-            this.EsActivo = esActivo;
-                
+            this.EsActivo = esActivo; 
+        }
+
+        public Persona AutoGenerarPersona()
+        {
+           //TODO Se crea automaticamente una persona con campos aleatoreos.
+            return null;
         }
 
     }

@@ -46,17 +46,11 @@ namespace Persistencia
             cmd.Parameters.AddWithValue("@tipo_socio_id", p.TipoSocio);
             cmd.Parameters.AddWithValue("@es_activo", p.EsActivo);
             cmd.Parameters.AddWithValue("@imagen", p.Imagen_bytes);
-            //cmd.Parameters.AddWithValue("@zona", p.Zona);
             
 
             cmd.ExecuteNonQuery();
             conn.Close();
 
-            return true;
-        }
-
-        public bool CrearPersona(Entidades.Persona persona)
-        {
             return true;
         }
 
