@@ -15,6 +15,7 @@ namespace Presentacion
         private int childFormNumber = 0;
 
         public Personas.frm_Persona_Crear frm_Persona_Crear;
+        public Personas.frm_Persona_Buscar frm_Persona_Buscar;
 
         public Principal()
         {
@@ -141,6 +142,28 @@ namespace Presentacion
         private void Principal_Load(object sender, EventArgs e)
         {
             new Negocio.Inicializacion();
+        }
+
+        private void buscarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (frm_Persona_Buscar != null)
+            {
+                if (frm_Persona_Buscar.IsDisposed)
+                {
+                    frm_Persona_Buscar = null;
+                }
+                else
+                {
+                    frm_Persona_Buscar.BringToFront();
+                }
+            }
+
+            if (frm_Persona_Buscar == null)
+            {
+                frm_Persona_Buscar = new Personas.frm_Persona_Buscar();
+                frm_Persona_Buscar.MdiParent = this;
+                frm_Persona_Buscar.Show();
+            }
         }
     }
 }

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
+using System.Data;
 
 namespace Persistencia
 {
@@ -54,5 +55,15 @@ namespace Persistencia
             return true;
         }
 
+        public DataTable RecuperarTodaLaTabla()
+        {
+            Connection.LoadConnectionString();
+            MySqlConnection conn = new MySqlConnection(Connection.ConnectionString);
+            string sqlCommand = @"SELECT * FROM clubgonnet.personas";
+            MySqlDataAdapter da = new MySqlDataAdapter(sqlCommand, conn);
+            DataTable dt = new DataTable("Socios");
+            da.Fill(dt);
+            return dt; 
+        }
     }
 }

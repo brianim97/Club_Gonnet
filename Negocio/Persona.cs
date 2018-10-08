@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using System.Data;
 
 namespace Negocio
 {
@@ -17,6 +18,10 @@ namespace Negocio
             return new Persistencia.Persona().AgregarPersona(persona);
         }
 
+        public DataTable RecuperarTodaLaTabla()
+        {
+            return new Persistencia.Persona().RecuperarTodaLaTabla();
+        }
 
         #region Metodos de estaticos de ayuda
 
