@@ -13,43 +13,118 @@ namespace Presentacion
     public partial class Principal : Form
     {
         private int childFormNumber = 0;
+        
 
-        public Personas.frm_Persona_Crear frm_Persona_Crear;
-        public Personas.frm_Persona_Buscar frm_Persona_Buscar;
+        private Personas.frm_Persona_Crear frm_Persona_Crear;
+        public Personas.frm_Persona_Crear Frm_Persona_Crear
+        {
+            get {
+
+                if (frm_Persona_Crear != null)
+                {
+                    if (frm_Persona_Crear.IsDisposed)
+                    {
+                        frm_Persona_Crear = null;
+                    }
+                    else
+                    {
+                        frm_Persona_Crear.BringToFront();
+                    }
+                }
+
+                if (frm_Persona_Crear == null)
+                {
+                    frm_Persona_Crear = new Personas.frm_Persona_Crear();
+                    frm_Persona_Crear.MdiParent = this;
+                    frm_Persona_Crear.Show();
+                }
+
+                return frm_Persona_Crear;
+            }
+        }
+
+        private Personas.frm_Persona_Buscar frm_Persona_Buscar;
+        public Personas.frm_Persona_Buscar Frm_Persona_Buscar
+        {
+            get
+            {
+                if (frm_Persona_Buscar != null)
+                {
+                    if (frm_Persona_Buscar.IsDisposed)
+                    {
+                        frm_Persona_Buscar = null;
+                    }
+                    else
+                    {
+                        frm_Persona_Buscar.BringToFront();
+                    }
+                }
+
+                if (frm_Persona_Buscar == null)
+                {
+                    frm_Persona_Buscar = new Personas.frm_Persona_Buscar(this);
+                    frm_Persona_Buscar.MdiParent = this;
+                    frm_Persona_Buscar.Show();
+                }
+
+                return frm_Persona_Buscar;
+            }
+        }
+
+        public Personas.frm_Persona_Modificar frm_Persona_Modificar;
+        public Personas.frm_Persona_Modificar Frm_Persona_Modificar
+        {
+            get
+            {
+                if (frm_Persona_Modificar != null)
+                {
+                    if (frm_Persona_Modificar.IsDisposed)
+                    {
+                        frm_Persona_Modificar = null;
+                    }
+                    else
+                    {
+                        frm_Persona_Modificar.BringToFront();
+                    }
+                }
+
+                if (frm_Persona_Modificar == null)
+                {
+                    frm_Persona_Modificar = new Personas.frm_Persona_Modificar(this);
+                    frm_Persona_Modificar.MdiParent = this;
+                    frm_Persona_Modificar.Show();
+                }
+
+                return frm_Persona_Modificar;
+            }
+        }
 
         public Principal()
         {
             InitializeComponent();
         }
 
+
+
         #region Eventos
-        private void crearToolStripMenuItem_Click(object sender, EventArgs e)
+
+        private void Principal_Load(object sender, EventArgs e)
         {
-
-            if (frm_Persona_Crear != null)
-            {
-                if (frm_Persona_Crear.IsDisposed)
-                {
-                    frm_Persona_Crear = null;
-                }
-                else
-                {
-                    frm_Persona_Crear.BringToFront();
-                }
-            }
-
-            if (frm_Persona_Crear == null)
-            {
-                frm_Persona_Crear = new Personas.frm_Persona_Crear();
-                frm_Persona_Crear.MdiParent = this;
-                frm_Persona_Crear.Show();
-            }
+            new Negocio.Inicializacion();
         }
 
+        private void crearToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frm_Persona_Crear = Frm_Persona_Crear;
+        }
+
+        private void buscarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frm_Persona_Buscar = Frm_Persona_Buscar;
+        }
+
+
         #endregion
-
-
-
 
 
         #region Auto Creados por MDI 
@@ -139,31 +214,8 @@ namespace Presentacion
         }
         #endregion
 
-        private void Principal_Load(object sender, EventArgs e)
-        {
-            new Negocio.Inicializacion();
-        }
 
-        private void buscarToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (frm_Persona_Buscar != null)
-            {
-                if (frm_Persona_Buscar.IsDisposed)
-                {
-                    frm_Persona_Buscar = null;
-                }
-                else
-                {
-                    frm_Persona_Buscar.BringToFront();
-                }
-            }
 
-            if (frm_Persona_Buscar == null)
-            {
-                frm_Persona_Buscar = new Personas.frm_Persona_Buscar();
-                frm_Persona_Buscar.MdiParent = this;
-                frm_Persona_Buscar.Show();
-            }
-        }
+
     }
 }

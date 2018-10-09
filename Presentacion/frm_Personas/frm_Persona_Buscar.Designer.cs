@@ -125,6 +125,7 @@
             this.btn_Modificar.TabIndex = 4;
             this.btn_Modificar.Text = "Modificar";
             this.btn_Modificar.UseVisualStyleBackColor = false;
+            this.btn_Modificar.Click += new System.EventHandler(this.btn_Modificar_Click);
             // 
             // frm_Persona_Buscar
             // 

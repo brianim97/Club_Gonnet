@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 using System.Data;
+using Entidades;
 
 namespace Negocio
 {
@@ -21,6 +22,11 @@ namespace Negocio
         public DataTable RecuperarTodaLaTabla()
         {
             return new Persistencia.Persona().RecuperarTodaLaTabla();
+        }
+
+        public Entidades.Persona RecuperarSocioPorId(int id)
+        {
+            return new Persistencia.Persona().RecuperarSocioPorId(id);
         }
 
         #region Metodos de estaticos de ayuda
@@ -88,7 +94,12 @@ namespace Negocio
                 throw new ArgumentException("Ocurrio un error al cargar la imagen");
             }
         }
-        
+
+        public bool ModificarPersona(Entidades.Persona persona)
+        {
+            return new Persistencia.Persona().ModificarPersona(persona);
+        }
+
         #endregion
     }
 }
