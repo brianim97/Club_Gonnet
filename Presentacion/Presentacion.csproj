@@ -96,6 +96,9 @@
     <EmbeddedResource Include="frm_Personas\frm_Persona_Buscar.resx">
       <DependentUpon>frm_Persona_Buscar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frm_Personas\frm_Persona_Cobro.resx">
+      <DependentUpon>frm_Persona_Cobro.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm_Personas\frm_Persona_Crear.resx">
       <DependentUpon>frm_Persona_Crear.cs</DependentUpon>
     </EmbeddedResource>
