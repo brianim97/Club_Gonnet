@@ -34,6 +34,7 @@
             this.lbl_Buscar = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btn_Modificar = new System.Windows.Forms.Button();
+            this.Cobrar = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -46,6 +47,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.Controls.Add(this.Cobrar, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.dataGridView1, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.txt_Busqueda, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.lbl_Buscar, 0, 0);
@@ -127,6 +129,18 @@
             this.btn_Modificar.UseVisualStyleBackColor = false;
             this.btn_Modificar.Click += new System.EventHandler(this.btn_Modificar_Click);
             // 
+            // Cobrar
+            // 
+            this.Cobrar.BackColor = System.Drawing.SystemColors.Highlight;
+            this.Cobrar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Cobrar.Location = new System.Drawing.Point(3, 451);
+            this.Cobrar.Name = "Cobrar";
+            this.Cobrar.Size = new System.Drawing.Size(190, 50);
+            this.Cobrar.TabIndex = 5;
+            this.Cobrar.Text = "Cobrar";
+            this.Cobrar.UseVisualStyleBackColor = false;
+            this.Cobrar.Click += new System.EventHandler(this.Cobrar_Click);
+            // 
             // frm_Persona_Buscar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -151,5 +165,6 @@
         private System.Windows.Forms.Label lbl_Buscar;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btn_Modificar;
+        private System.Windows.Forms.Button Cobrar;
     }
 }

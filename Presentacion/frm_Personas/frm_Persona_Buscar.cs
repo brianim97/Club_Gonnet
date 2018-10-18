@@ -62,5 +62,17 @@ namespace Presentacion.Personas
             mdi_Principal.frm_Persona_Modificar = mdi_Principal.Frm_Persona_Modificar;
             mdi_Principal.frm_Persona_Modificar.CargarSocioParaModificar(id_Para_Modificar);
         }
+
+        private void Cobrar_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedCells.Count <= 0)
+                return;
+
+            int rowIndex = dataGridView1.SelectedCells[0].RowIndex;
+            int id_Para_Cobro = (int)dataGridView1["id", rowIndex].Value;
+            mdi_Principal.frm_Persona_Cobrar = mdi_Principal.Frm_Persona_Cobrar;
+            mdi_Principal.frm_Persona_Cobrar.CargarSocioParaCobrar(id_Para_Cobro);
+
+        }
     }
 }

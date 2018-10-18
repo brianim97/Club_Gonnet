@@ -61,6 +61,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frm_Personas\frm_Persona_Cobro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Personas\frm_Persona_Cobro.Designer.cs">
+      <DependentUpon>frm_Persona_Cobro.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_Personas\frm_Persona_Crear.cs">
       <SubType>Form</SubType>
     </Compile>

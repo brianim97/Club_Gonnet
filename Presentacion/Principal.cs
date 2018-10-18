@@ -99,6 +99,34 @@ namespace Presentacion
             }
         }
 
+        public Personas.frm_Persona_Cobro frm_Persona_Cobrar;
+        public Personas.frm_Persona_Cobro Frm_Persona_Cobrar
+        {
+            get
+            {
+                if (frm_Persona_Cobrar != null)
+                {
+                    if (frm_Persona_Cobrar.IsDisposed)
+                    {
+                        frm_Persona_Cobrar = null;
+                    }
+                    else
+                    {
+                        frm_Persona_Cobrar.BringToFront();
+                    }
+                }
+
+                if (frm_Persona_Cobrar == null)
+                {
+                    frm_Persona_Cobrar = new Personas.frm_Persona_Cobro(this);
+                    frm_Persona_Cobrar.MdiParent = this;
+                    frm_Persona_Cobrar.Show();
+                }
+
+                return frm_Persona_Cobrar;
+            }
+        }
+
         public Principal()
         {
             InitializeComponent();
